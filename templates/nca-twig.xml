@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templateSet group="NCA-Twig">
+  <template
+    name="twig-defined-and-not-empty"
+    value="{% if $variable$ is defined and $variable$ is not empty %}&#10;    $END$&#10;{% endif %}"
+    description="Check if a Twig variable is defined and not empty"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable
+      name="variable"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-dump-internal"
+    value="{% dump($item$) %}"
+    description="Internal twig dump for symfony debug bar"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="item" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-set-target"
+    value="{% set page = sulu_content_load($var$) %}&#10;{% set target = sulu_content_path(page.content.url) %}"
+    description="Set target as var from sulu_content_load"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-not-empty"
+    value="{% if $variable$ is not empty %}&#10;{% endif %}"
+    description="Check if a Twig variable is not empty"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable
+      name="variable"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-sulu-excerpt-image"
+    value="{{ extension.excerpt.images[0].formats['$width$x$height$'] }}"
+    description="first excerpt image"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="width" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="height" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS_PROPERTY_VALUE" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-dump-extension-excerpt"
+    value="{% dump(extension.excerpt) %}"
+    description="Dump internal extension exerpt"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-content-title"
+    value="{{ content.title }}"
+    description="content.title"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-snippet-header"
+    value="{% set snippets = sulu_snippet_load_by_area('$key$') %}&#10;{% set content = snippets.content %}"
+    description="load snippet and set content variable"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-not-empty-for-loop"
+    value="{% if content.$key$ is not empty %}&#10;    {% for item in content.$key$ %}&#10;&#10;    {% endfor %}&#10;{% endif %}"
+    description="twig not empty for loop"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-content-organisation"
+    value="{% if content.organisation is defined and content.organisation is not empty %}&#10;    {% set organisation = content.organisation[0] %}&#10;{% endif %}    "
+    description="Set organisation to twig templae"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-for-loop-filter-division"
+    value="{% for key,item in content.$key$|filter((item,key) =&gt; key is divisible by(2)) %}&#10;    $end$                                            &#10;{% endfor %}"
+    description="For loop with a filder on index devision on 2"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-organisation-set"
+    value="{% set snippet = sulu_snippet_load_by_area('organisation') %}&#10;{% if snippet.content.organisation is defined and snippet.content.organisation is not empty %}&#10;    {% set organisation = snippet.content.organisation[0] %}&#10;{% else %}&#10;    {% set organisation = [] %}&#10;{% endif %}&#10;{% dump(organisation) %}"
+    description="Use in base templates with internal dump"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig blocks.html.twig"
+    value="{% if content.blocks|default([])|length %}&#10;    {% for block in content.blocks %}&#10;        {% include 'includes/blocks/' ~ block.type ~ '.html.twig' with {&#10;            content: block,&#10;            view: view.view.blocks[loop.loop.index0],&#10;        } only %}&#10;    {% endfor %}&#10;{% endif %}"
+    description="Blocks loader"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-nav-main-simple"
+    value="{% for item in sulu_navigation_root_tree('main', 2, true) %}&#10;    {% set itemUrl = sulu_content_path(item.url) %}&#10;    {% set css = app.request.uri starts with itemUrl ? ' active' : '' %}&#10;    &lt;li class=&quot; {{ css }}&quot;&gt;&#10;        &lt;a href=&quot;{{ item.url }}&quot; title=&quot;{{ item.title }}&quot;&gt;&#10;            {{ item.excerpt.item.excerpt.title|default(item.title) }}&#10;        &lt;/a&gt;&#10;    &lt;/li&gt;&#10;{% endfor %}"
+    description="li loop for simple main navigation"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  <template
+    name="twig-base"
+    value="{% extends &quot;base$location$.html.twig&quot; %}&#10;&#10;{% block content %}&#10;{% endblock %}&#10;&#10;{% block javascript %}&#10;{% endblock %}"
+    description="Base template for pages"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable
+      name="location"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="Twig" value="true" />
+    </context>
+  </template>
+  
+</templateSet>

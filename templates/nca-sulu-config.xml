@@ -1,56 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templateSet group="NCA-Sulu">
   <template
-    name="VD"
-    value="var_dump(__FILE__, $oAttribute$);&#10;exit;"
-    description="var_dump and exit"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable
-      name="oAttribute"
-      expression=""
-      defaultValue=""
-      alwaysStopAt="true"
-    />
-    <context>
-      <option name="PHP Expression" value="true" />
-      <option name="PHP Statement" value="true" />
-    </context>
-  </template>
-  <template
-    name="FD"
-    value="&lt;f:debug title=&quot;$all$&quot;&gt;{_$all$}&lt;/f:debug&gt;"
-    description="Fluid Debug"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable name="all" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="HTML_TEXT" value="true" />
-    </context>
-  </template>
-  
-  <template
-    name="twig-defined-and-not-empty"
-    value="{% if $variable$ is defined and $variable$ is not empty %}&#10;    $END$&#10;{% endif %}"
-    description="Check if a Twig variable is defined and not empty"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable
-      name="variable"
-      expression=""
-      defaultValue=""
-      alwaysStopAt="true"
-    />
-    <context>
-      <option name="HTML" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-property-text"
+    name="config-property-text"
     value="&lt;property name=&quot;text&quot; type=&quot;text_line&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$show$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;&#10;$END$"
     description="Sulu property for text"
     toReformat="true"
@@ -62,7 +13,7 @@
     </context>
   </template>
   <template
-    name="sulu-property-image"
+    name="config-property-image"
     value="&lt;property name=&quot;$templatemarker$image&quot; type=&quot;media_selection&quot; maxOccurs=&quot;1&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Image&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;types&quot; value=&quot;image&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;&#10;$END$"
     description="Sulu pproperty image"
     toReformat="true"
@@ -79,20 +30,7 @@
     </context>
   </template>
   <template
-    name="twig-dump-internal"
-    value="{% dump($item$) %}"
-    description="Internal twig dump for symfony debug bar"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable name="item" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-section"
+    name="config-section"
     value="&lt;section name=&quot;$name$&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;properties&gt;&#10;        $end$&#10;    &lt;/properties&gt;&#10;&lt;/section&gt;"
     description="Sulu section block without property"
     toReformat="true"
@@ -106,7 +44,7 @@
     </context>
   </template>
   <template
-    name="sulu-property-url"
+    name="config-property-url"
     value="&lt;property name=&quot;$property$&quot; type=&quot;url&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;&#10;$END$"
     description="Sulu Property URL"
     toReformat="true"
@@ -124,7 +62,7 @@
     </context>
   </template>
   <template
-    name="sulu-block"
+    name="config-block"
     value="&lt;block name=&quot;$name$items&quot; default-type=&quot;items&quot; minOccurs=&quot;0&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Items&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;types&gt;&#10;        &lt;type name=&quot;items&quot;&gt;&#10;            &lt;meta&gt;&#10;                &lt;title&gt;Item&lt;/title&gt;&#10;            &lt;/meta&gt;&#10;            &lt;properties&gt;&#10;                $end$&#10;            &lt;/properties&gt;&#10;        &lt;/type&gt;&#10;    &lt;/types&gt;&#10;&lt;/block&gt;"
     description="Sulu block element"
     toReformat="true"
@@ -137,7 +75,7 @@
     </context>
   </template>
   <template
-    name="sulu-property-bio"
+    name="config-property-bio"
     value="&lt;property name=&quot;$name$&quot; type=&quot;text_area&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$headline$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
     description=""
     toReformat="true"
@@ -155,7 +93,7 @@
     </context>
   </template>
   <template
-    name="sulu-property-text-editor"
+    name="config-property-text-editor"
     value="&lt;property name=&quot;textEditor&quot; type=&quot;text_editor&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;table&quot; value=&quot;false&quot;/&gt;&#10;        &lt;param name=&quot;link&quot; value=&quot;true&quot;/&gt;&#10;        &lt;!-- CKEditor Parameters examples: --&gt;&#10;        &lt;param name=&quot;extra_allowed_content&quot; value=&quot;img(*)[*]; span(*)[*]; div(*)[*]; iframe(*)[*]; script(*)[*]&quot; /&gt;&#10;        &lt;param name=&quot;ui_color&quot; value=&quot;#ffcc00&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;&#10;$END$"
     description="Sulu property text editor"
     toReformat="true"
@@ -167,7 +105,7 @@
     </context>
   </template>
   <template
-    name="sulu-page-config"
+    name="config-page-config"
     value="&lt;?xml version=&quot;1.0&quot; ?&gt;&#10;&lt;template xmlns=&quot;http://schemas.sulu.io/template/template&quot;&#10;          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#10;          xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&#10;          xsi:schemaLocation=&quot;http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd&quot;&gt;&#10;&#10;    &lt;key&gt;$key$&lt;/key&gt;&#10;&#10;    &lt;view&gt;pages/$key$&lt;/view&gt;&#10;    &lt;controller&gt;Sulu\Bundle\WebsiteBundle\Controller\DefaultController::indexAction&lt;/controller&gt;&#10;    &lt;cacheLifetime&gt;604800&lt;/cacheLifetime&gt;&#10;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;properties&gt;&#10;        &lt;xi:include href=&quot;../includes/highlight.xml&quot;/&gt;&#10;&#10;        $end$&#10;    &lt;/properties&gt;&#10;&lt;/template&gt;"
     description="Sulu page configuration"
     toReformat="true"
@@ -181,7 +119,7 @@
     </context>
   </template>
   <template
-    name="sulu-format-img"
+    name="config-format-img"
     value="&lt;format key=&quot;$key$&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title lang=&quot;en&quot;&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;scale x=&quot;$width$&quot; y=&quot;$height$&quot;/&gt;&#10;&lt;/format&gt;"
     description=""
     toReformat="true"
@@ -196,7 +134,7 @@
     </context>
   </template>
   <template
-    name="sulu-property-page-selection"
+    name="config-property-page-selection"
     value="&lt;property name=&quot;$name$&quot; type=&quot;single_page_selection&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Internal URL&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
     description="Page selection"
     toReformat="true"
@@ -208,33 +146,7 @@
     </context>
   </template>
   <template
-    name="twig-sulu-img-source"
-    value="{% set source = $sliderItem$.$slideImage$[0].formats['$width$x$height$'] %}$end$"
-    description="Sulu img source with formats"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable
-      name="sliderItem"
-      expression=""
-      defaultValue=""
-      alwaysStopAt="true"
-    />
-    <variable
-      name="slideImage"
-      expression=""
-      defaultValue=""
-      alwaysStopAt="true"
-    />
-    <variable name="width" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="height" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="HTML" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-property-single-select"
+    name="config-property-single-select"
     value="&lt;property name=&quot;$name$&quot; type=&quot;single_select&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;default_value&quot; value=&quot;$firstOption$&quot;/&gt;&#10;        &lt;param name=&quot;values&quot; type=&quot;collection&quot;&gt;&#10;            &lt;param name=&quot;$firstOption$&quot;&gt;&#10;                &lt;meta&gt;&#10;                    &lt;title&gt;$firstOptionTitle$&lt;/title&gt;&#10;                &lt;/meta&gt;&#10;            &lt;/param&gt;&#10;            &lt;param name=&quot;$secondOption$&quot;&gt;&#10;                &lt;meta&gt;&#10;                    &lt;title&gt;$secondOptionTitle$&lt;/title&gt;&#10;                &lt;/meta&gt;&#10;            &lt;/param&gt;&#10;        &lt;/param&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
     description="Sulu Single select with two options"
     toReformat="true"
@@ -271,25 +183,7 @@
     </context>
   </template>
   <template
-    name="sulu-twig-base"
-    value="{% extends &quot;base$location$.html.twig&quot; %}&#10;&#10;{% block content %}&#10;{% endblock %}&#10;&#10;{% block javascript %}&#10;{% endblock %}"
-    description="Base template for pages"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable
-      name="location"
-      expression=""
-      defaultValue=""
-      alwaysStopAt="true"
-    />
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-headline"
+    name="config-headline"
     value="&lt;property name=&quot;$key$headline&quot; type=&quot;text_line&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Headline&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;headline&quot; value=&quot;true&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
     description="headline text line"
     toReformat="true"
@@ -301,7 +195,7 @@
     </context>
   </template>
   <template
-    name="sulu-subline"
+    name="config-subline"
     value="&lt;property name=&quot;$key$subline&quot; type=&quot;text_line&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Subline&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
     description="headline text line"
     toReformat="true"
@@ -313,20 +207,7 @@
     </context>
   </template>
   <template
-    name="twig-sulu-set-target"
-    value="{% set page = sulu_content_load($var$) %}&#10;{% set target = sulu_content_path(page.content.url) %}"
-    description="Set target as var from sulu_content_load"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-link-text-to-page"
+    name="config-link-text-to-page"
     value="&lt;property name=&quot;$var$buttonText&quot; type=&quot;text_line&quot; colspan=&quot;6&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Text&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;&#10;&lt;property name=&quot;$var$buttonLink&quot; type=&quot;single_page_selection&quot; colspan=&quot;6&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Page&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
     description="Link text and page selection in one line"
     toReformat="true"
@@ -338,25 +219,7 @@
     </context>
   </template>
   <template
-    name="twig-not-empty"
-    value="{% if $variable$ is not empty %}&#10;{% endif %}"
-    description="Check if a Twig variable is not empty"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable
-      name="variable"
-      expression=""
-      defaultValue=""
-      alwaysStopAt="true"
-    />
-    <context>
-      <option name="HTML" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-title-de"
+    name="config-title-de"
     value="&lt;title lang=&quot;de&quot;&gt;$title$&lt;/title&gt;"
     description="Sulu title with de"
     toReformat="true"
@@ -368,7 +231,7 @@
     </context>
   </template>
   <template
-    name="sulu-title-en"
+    name="config-title-en"
     value="&lt;title lang=&quot;en&quot;&gt;$title$&lt;/title&gt;"
     description="Sulu title with en"
     toReformat="true"
@@ -380,44 +243,7 @@
     </context>
   </template>
   <template
-    name="twig-sulu-excerpt-image"
-    value="{{ extension.excerpt.images[0].formats['$width$x$height$'] }}"
-    description="first excerpt image"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable name="width" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="height" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="CSS_PROPERTY_VALUE" value="true" />
-    </context>
-  </template>
-  <template
-    name="twig-dump-extension-excerpt"
-    value="{% dump(extension.excerpt) %}"
-    description="Dump internal extension exerpt"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="twig-content-title"
-    value="{{ content.title }}"
-    description="content.title"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-property-organisation"
+    name="config-property-organisation"
     value="&lt;property name=&quot;organisation&quot; type=&quot;contact_account_selection&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Organisation&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
     description="contact account selection with organisation"
     toReformat="true"
@@ -428,7 +254,7 @@
     </context>
   </template>
   <template
-    name="sulu-snippet-config"
+    name="config-snippet-config"
     value="&lt;?xml version=&quot;1.0&quot; ?&gt;&#10;&lt;template xmlns=&quot;http://schemas.sulu.io/template/template&quot;&#10;          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#10;          xsi:schemaLocation=&quot;http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd&quot;&gt;&#10;&#10;    &lt;key&gt;$key$&lt;/key&gt;&#10;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;areas&gt;&#10;        &lt;area key=&quot;$key$&quot;&gt;&#10;            &lt;meta&gt;&#10;                &lt;title&gt;$title$&lt;/title&gt;&#10;            &lt;/meta&gt;&#10;        &lt;/area&gt;&#10;    &lt;/areas&gt;&#10;&#10;    &lt;properties&gt;&#10;        &lt;property name=&quot;title&quot; type=&quot;text_line&quot; mandatory=&quot;true&quot;&gt;&#10;            &lt;meta&gt;&#10;                &lt;title&gt;Title&lt;/title&gt;&#10;            &lt;/meta&gt;&#10;            &lt;tag name=&quot;sulu.node.name&quot;/&gt;&#10;        &lt;/property&gt;&#10;        $end$&#10;    &lt;/properties&gt;&#10;&lt;/template&gt;"
     description="Sulu snippet confguration XML"
     toReformat="true"
@@ -442,20 +268,7 @@
     </context>
   </template>
   <template
-    name="twig-sulu-snippet-header"
-    value="{% set snippets = sulu_snippet_load_by_area('$key$') %}&#10;{% set content = snippets.content %}"
-    description="load snippet and set content variable"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-property-checkbox"
+    name="config-property-checkbox"
     value="&lt;property name=&quot;$name$&quot; type=&quot;checkbox&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;type&quot; value=&quot;toggler&quot;/&gt;&#10;        &lt;param name=&quot;default_value&quot; value=&quot;true&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
     description="Sulu property checkbox"
     toReformat="true"
@@ -468,7 +281,7 @@
     </context>
   </template>
   <template
-    name="sulu-property-form"
+    name="config-property-form"
     value="&lt;property name=&quot;form&quot; type=&quot;single_form_selection&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title lang=&quot;de&quot;&gt;Formular&lt;/title&gt;&#10;        &lt;title lang=&quot;en&quot;&gt;Form&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;resourceKey&quot; value=&quot;page&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
     description="sulu-form-property"
     toReformat="true"
@@ -479,20 +292,7 @@
     </context>
   </template>
   <template
-    name="twig-not-empty-for-loop"
-    value="{% if content.$key$ is not empty %}&#10;    {% for item in content.$key$ %}&#10;&#10;    {% endfor %}&#10;{% endif %}"
-    description="twig not empty for loop"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-property-select-value-de"
+    name="config-property-select-value-de"
     value="&lt;param name=&quot;$value$&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$display$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/param&gt;$END$"
     description="Sulu property select value de"
     toReformat="true"
@@ -510,19 +310,7 @@
     </context>
   </template>
   <template
-    name="twig-content-organisation"
-    value="{% if content.organisation is defined and content.organisation is not empty %}&#10;    {% set organisation = content.organisation[0] %}&#10;{% endif %}    "
-    description="Set organisation to twig templae"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-list-entity"
+    name="config-list-entity"
     value="&lt;property name=&quot;$name$&quot; visibility=&quot;always&quot; searchability=&quot;yes&quot; translation=&quot;sulu_admin.$name$&quot;&gt;&#10;    &lt;field-name&gt;$name$&lt;/field-name&gt;&#10;    &lt;entity-name&gt;App\Entity\$Entity$&lt;/entity-name&gt;&#10;&lt;/property&gt;"
     description="Sulu list entity"
     toReformat="true"
@@ -535,7 +323,7 @@
     </context>
   </template>
   <template
-    name="sulu-property-admin-form"
+    name="config-property-admin-form"
     value="&lt;property name=&quot;$propertie$&quot; type=&quot;text_line&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;sulu_admin.$propertie$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
     description="Property admin form"
     toReformat="true"
@@ -552,21 +340,7 @@
     </context>
   </template>
   <template
-    name="twig-for-loop-filter-division"
-    value="{% for key,item in content.$key$|filter((item,key) =&gt; key is divisible by(2)) %}&#10;    $end$                                            &#10;{% endfor %}"
-    description="For loop with a filder on index devision on 2"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-property-editor-description"
+    name="config-property-editor-description"
     value="&lt;property name=&quot;$key$description&quot; type=&quot;text_editor&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Description&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;table&quot; value=&quot;false&quot;/&gt;&#10;        &lt;param name=&quot;link&quot; value=&quot;true&quot;/&gt;&#10;        &lt;!-- CKEditor Parameters examples: --&gt;&#10;        &lt;param name=&quot;extra_allowed_content&quot;&#10;               value=&quot;img(*)[*]; span(*)[*]; div(*)[*]; iframe(*)[*]; script(*)[*]&quot;/&gt;&#10;        &lt;param name=&quot;ui_color&quot; value=&quot;#ffcc00&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
     description="Sulu text editor with Description key"
     toReformat="true"
@@ -578,7 +352,7 @@
     </context>
   </template>
   <template
-    name="sulu-config-block-xml-file"
+    name="config-block-xml-file"
     value="&lt;properties xmlns=&quot;http://schemas.sulu.io/template/template&quot;&#10;            xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#10;            xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&#10;            xsi:schemaLocation=&quot;http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd&quot;&gt;&#10;    &lt;block name=&quot;blocks&quot; default-type=&quot;$key$&quot;&gt;&#10;        &lt;!-- @see https://docs.sulu.io/en/2.1/reference/content-types/block.html --&gt;&#10;        &lt;types&gt;&#10;            &lt;type name=&quot;$key$&quot;&gt;&#10;                &lt;meta&gt;&#10;                    &lt;title&gt;$title$&lt;/title&gt;&#10;                &lt;/meta&gt;&#10;                &lt;properties&gt;&#10;                    $end$                    &#10;                &lt;/properties&gt;&#10;            &lt;/type&gt;&#10;        &lt;/types&gt;&#10;    &lt;/block&gt;&#10;&lt;/properties&gt;"
     description="Sulu block config for XML include"
     toReformat="true"
@@ -592,31 +366,7 @@
     </context>
   </template>
   <template
-    name="twig-organisation-set"
-    value="{% set snippet = sulu_snippet_load_by_area('organisation') %}&#10;{% if snippet.content.organisation is defined and snippet.content.organisation is not empty %}&#10;    {% set organisation = snippet.content.organisation[0] %}&#10;{% else %}&#10;    {% set organisation = [] %}&#10;{% endif %}&#10;{% dump(organisation) %}"
-    description="Use in base templates with internal dump"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu twig blocks.html.twig"
-    value="{% if content.blocks|default([])|length %}&#10;    {% for block in content.blocks %}&#10;        {% include 'includes/blocks/' ~ block.type ~ '.html.twig' with {&#10;            content: block,&#10;            view: view.view.blocks[loop.loop.index0],&#10;        } only %}&#10;    {% endfor %}&#10;{% endif %}"
-    description="Blocks loader"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu config blocks.xml"
+    name="config blocks.xml"
     value="&lt;properties xmlns=&quot;http://schemas.sulu.io/template/template&quot;&#10;            xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#10;                        xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&#10;            xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&#10;            xsi:schemaLocation=&quot;http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd&quot;&gt;&#10;    &lt;block name=&quot;blocks&quot; default-type=&quot;$var$&quot; minOccurs=&quot;0&quot;&gt;&#10;        &lt;!-- @see https://docs.sulu.io/en/2.1/reference/content-types/block.html --&gt;&#10;&#10;        &lt;meta&gt;&#10;            &lt;title lang=&quot;en&quot;&gt;Content&lt;/title&gt;&#10;            &lt;title lang=&quot;de&quot;&gt;Inhalte&lt;/title&gt;&#10;        &lt;/meta&gt;&#10;&#10;        &lt;types&gt;&#10;            &lt;xi:include href=&quot;blocks/$var$.xml&quot; xpointer=&quot;xmlns(sulu=http://schemas.sulu.io/template/template)xpointer(/sulu:properties/sulu:block/sulu:types/sulu:type)&quot;/&gt;&#10;        &lt;/types&gt;&#10;    &lt;/block&gt;&#10;&lt;/properties&gt;"
     description="Blocks loader"
     toReformat="true"
@@ -628,7 +378,7 @@
     </context>
   </template>
   <template
-    name="block-include"
+    name="config-include"
     value="&lt;xi:include href=&quot;blocks/$team$&quot;&#10;                        xpointer=&quot;xmlns(sulu=http://schemas.sulu.io/template/template)xpointer(/sulu:properties/sulu:block/sulu:types/sulu:type)&quot;/&gt;"
     description="XML Include in blocks loader"
     toReformat="true"
@@ -640,7 +390,7 @@
     </context>
   </template>
   <template
-    name="sulu-data"
+    name="config-date"
     value="&lt;property name=&quot;date&quot; type=&quot;date&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Datum&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
     description="Sulu date picker"
     toReformat="true"
@@ -651,7 +401,7 @@
     </context>
   </template>
   <template
-    name="sulu-smart-content"
+    name="config-smart-content"
     value="&lt;property name=&quot;$key$&quot; type=&quot;smart_content&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title lang=&quot;en&quot;&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;provider&quot; value=&quot;pages&quot;/&gt;&#10;        &lt;param name=&quot;max_per_page&quot; value=&quot;100&quot;/&gt;&#10;        &lt;param name=&quot;page_parameter&quot; value=&quot;p&quot;/&gt;&#10;        &lt;param name=&quot;properties&quot; type=&quot;collection&quot;&gt;&#10;            &lt;param name=&quot;url&quot; value=&quot;url&quot;/&gt;&#10;            &lt;param name=&quot;excerptTitle&quot; value=&quot;excerpt.title&quot;/&gt;&#10;            &lt;param name=&quot;excerptImages&quot; value=&quot;excerpt.images&quot;/&gt;&#10;            &lt;param name=&quot;excerptCategories&quot; value=&quot;excerpt.categories&quot;/&gt;&#10;        &lt;/param&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
     description="Smart content XML configuration"
     toReformat="true"
@@ -664,7 +414,7 @@
     </context>
   </template>
   <template
-    name="sulu-contacts-config"
+    name="config-contacts"
     value="&lt;property name=&quot;contacts&quot; type=&quot;contact_selection&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title lang=&quot;en&quot;&gt;Contacts&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
     description="Contact selection"
     toReformat="true"
@@ -675,7 +425,7 @@
     </context>
   </template>
   <template
-    name="sulu-config-search"
+    name="config-search"
     value="&lt;tag name=&quot;sulu.search.field&quot; /&gt;"
     description="Tag sulu search dield"
     toReformat="true"
@@ -683,18 +433,6 @@
   >
     <context>
       <option name="XML_TEXT" value="true" />
-    </context>
-  </template>
-  <template
-    name="sulu-nav-main-simple"
-    value="{% for item in sulu_navigation_root_tree('main', 2, true) %}&#10;    {% set itemUrl = sulu_content_path(item.url) %}&#10;    {% set css = app.request.uri starts with itemUrl ? ' active' : '' %}&#10;    &lt;li class=&quot; {{ css }}&quot;&gt;&#10;        &lt;a href=&quot;{{ item.url }}&quot; title=&quot;{{ item.title }}&quot;&gt;&#10;            {{ item.excerpt.item.excerpt.title|default(item.title) }}&#10;        &lt;/a&gt;&#10;    &lt;/li&gt;&#10;{% endfor %}"
-    description="li loop for simple main navigation"
-    toReformat="true"
-    toShortenFQNames="true"
-  >
-    <context>
-      <option name="HTML_TEXT" value="true" />
-      <option name="Twig" value="true" />
     </context>
   </template>
 </templateSet>
