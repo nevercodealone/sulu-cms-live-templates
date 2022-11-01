@@ -1,4 +1,4 @@
-<templateSet group="nca">
+<templateSet group="nca-sulu">
   <template
     name="VD"
     value="var_dump(__FILE__, $oAttribute$);&#10;exit;"
