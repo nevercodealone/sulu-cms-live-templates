@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templateSet group="NCA-Sulu-Config">
+  <template
+    name="config-property-text"
+    value="&lt;property name=&quot;text&quot; type=&quot;text_line&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$show$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;&#10;$END$"
+    description="Sulu property for text"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="show" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-image"
+    value="&lt;property name=&quot;$templatemarker$image&quot; type=&quot;media_selection&quot; maxOccurs=&quot;1&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Image&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;types&quot; value=&quot;image&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;&#10;$END$"
+    description="Sulu pproperty image"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable
+      name="templatemarker"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-section"
+    value="&lt;section name=&quot;$name$&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;properties&gt;&#10;        $end$&#10;    &lt;/properties&gt;&#10;&lt;/section&gt;"
+    description="Sulu section block without property"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-url"
+    value="&lt;property name=&quot;$property$&quot; type=&quot;url&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;&#10;$END$"
+    description="Sulu Property URL"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable
+      name="property"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-block"
+    value="&lt;block name=&quot;$name$items&quot; default-type=&quot;items&quot; minOccurs=&quot;0&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Items&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;types&gt;&#10;        &lt;type name=&quot;items&quot;&gt;&#10;            &lt;meta&gt;&#10;                &lt;title&gt;Item&lt;/title&gt;&#10;            &lt;/meta&gt;&#10;            &lt;properties&gt;&#10;                $end$&#10;            &lt;/properties&gt;&#10;        &lt;/type&gt;&#10;    &lt;/types&gt;&#10;&lt;/block&gt;"
+    description="Sulu block element"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-bio"
+    value="&lt;property name=&quot;$name$&quot; type=&quot;text_area&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$headline$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
+    description=""
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable
+      name="headline"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-text-editor"
+    value="&lt;property name=&quot;textEditor&quot; type=&quot;text_editor&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;table&quot; value=&quot;false&quot;/&gt;&#10;        &lt;param name=&quot;link&quot; value=&quot;true&quot;/&gt;&#10;        &lt;!-- CKEditor Parameters examples: --&gt;&#10;        &lt;param name=&quot;extra_allowed_content&quot; value=&quot;img(*)[*]; span(*)[*]; div(*)[*]; iframe(*)[*]; script(*)[*]&quot; /&gt;&#10;        &lt;param name=&quot;ui_color&quot; value=&quot;#ffcc00&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;&#10;$END$"
+    description="Sulu property text editor"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-page-config"
+    value="&lt;?xml version=&quot;1.0&quot; ?&gt;&#10;&lt;template xmlns=&quot;http://schemas.sulu.io/template/template&quot;&#10;          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#10;          xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&#10;          xsi:schemaLocation=&quot;http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd&quot;&gt;&#10;&#10;    &lt;key&gt;$key$&lt;/key&gt;&#10;&#10;    &lt;view&gt;pages/$key$&lt;/view&gt;&#10;    &lt;controller&gt;Sulu\Bundle\WebsiteBundle\Controller\DefaultController::indexAction&lt;/controller&gt;&#10;    &lt;cacheLifetime&gt;604800&lt;/cacheLifetime&gt;&#10;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;properties&gt;&#10;        &lt;xi:include href=&quot;../includes/highlight.xml&quot;/&gt;&#10;&#10;        $end$&#10;    &lt;/properties&gt;&#10;&lt;/template&gt;"
+    description="Sulu page configuration"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-format-img"
+    value="&lt;format key=&quot;$key$&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title lang=&quot;en&quot;&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;scale x=&quot;$width$&quot; y=&quot;$height$&quot;/&gt;&#10;&lt;/format&gt;"
+    description=""
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="width" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="height" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-page-selection"
+    value="&lt;property name=&quot;$name$&quot; type=&quot;single_page_selection&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Internal URL&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
+    description="Page selection"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-single-select"
+    value="&lt;property name=&quot;$name$&quot; type=&quot;single_select&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;default_value&quot; value=&quot;$firstOption$&quot;/&gt;&#10;        &lt;param name=&quot;values&quot; type=&quot;collection&quot;&gt;&#10;            &lt;param name=&quot;$firstOption$&quot;&gt;&#10;                &lt;meta&gt;&#10;                    &lt;title&gt;$firstOptionTitle$&lt;/title&gt;&#10;                &lt;/meta&gt;&#10;            &lt;/param&gt;&#10;            &lt;param name=&quot;$secondOption$&quot;&gt;&#10;                &lt;meta&gt;&#10;                    &lt;title&gt;$secondOptionTitle$&lt;/title&gt;&#10;                &lt;/meta&gt;&#10;            &lt;/param&gt;&#10;        &lt;/param&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
+    description="Sulu Single select with two options"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable
+      name="firstOption"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <variable
+      name="firstOptionTitle"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <variable
+      name="secondOption"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <variable
+      name="secondOptionTitle"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-headline"
+    value="&lt;property name=&quot;$key$headline&quot; type=&quot;text_line&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Headline&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;headline&quot; value=&quot;true&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
+    description="headline text line"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-subline"
+    value="&lt;property name=&quot;$key$subline&quot; type=&quot;text_line&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Subline&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
+    description="headline text line"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-link-text-to-page"
+    value="&lt;property name=&quot;$var$buttonText&quot; type=&quot;text_line&quot; colspan=&quot;6&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Text&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;&#10;&lt;property name=&quot;$var$buttonLink&quot; type=&quot;single_page_selection&quot; colspan=&quot;6&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Page&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
+    description="Link text and page selection in one line"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-title-de"
+    value="&lt;title lang=&quot;de&quot;&gt;$title$&lt;/title&gt;"
+    description="Sulu title with de"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-title-en"
+    value="&lt;title lang=&quot;en&quot;&gt;$title$&lt;/title&gt;"
+    description="Sulu title with en"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-organisation"
+    value="&lt;property name=&quot;organisation&quot; type=&quot;contact_account_selection&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Organisation&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
+    description="contact account selection with organisation"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-snippet-config"
+    value="&lt;?xml version=&quot;1.0&quot; ?&gt;&#10;&lt;template xmlns=&quot;http://schemas.sulu.io/template/template&quot;&#10;          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#10;          xsi:schemaLocation=&quot;http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd&quot;&gt;&#10;&#10;    &lt;key&gt;$key$&lt;/key&gt;&#10;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;areas&gt;&#10;        &lt;area key=&quot;$key$&quot;&gt;&#10;            &lt;meta&gt;&#10;                &lt;title&gt;$title$&lt;/title&gt;&#10;            &lt;/meta&gt;&#10;        &lt;/area&gt;&#10;    &lt;/areas&gt;&#10;&#10;    &lt;properties&gt;&#10;        &lt;property name=&quot;title&quot; type=&quot;text_line&quot; mandatory=&quot;true&quot;&gt;&#10;            &lt;meta&gt;&#10;                &lt;title&gt;Title&lt;/title&gt;&#10;            &lt;/meta&gt;&#10;            &lt;tag name=&quot;sulu.node.name&quot;/&gt;&#10;        &lt;/property&gt;&#10;        $end$&#10;    &lt;/properties&gt;&#10;&lt;/template&gt;"
+    description="Sulu snippet confguration XML"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-checkbox"
+    value="&lt;property name=&quot;$name$&quot; type=&quot;checkbox&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;type&quot; value=&quot;toggler&quot;/&gt;&#10;        &lt;param name=&quot;default_value&quot; value=&quot;true&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
+    description="Sulu property checkbox"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-form"
+    value="&lt;property name=&quot;form&quot; type=&quot;single_form_selection&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title lang=&quot;de&quot;&gt;Formular&lt;/title&gt;&#10;        &lt;title lang=&quot;en&quot;&gt;Form&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;resourceKey&quot; value=&quot;page&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
+    description="sulu-form-property"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-select-value-de"
+    value="&lt;param name=&quot;$value$&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;$display$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/param&gt;$END$"
+    description="Sulu property select value de"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable
+      name="display"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-list-entity"
+    value="&lt;property name=&quot;$name$&quot; visibility=&quot;always&quot; searchability=&quot;yes&quot; translation=&quot;sulu_admin.$name$&quot;&gt;&#10;    &lt;field-name&gt;$name$&lt;/field-name&gt;&#10;    &lt;entity-name&gt;App\Entity\$Entity$&lt;/entity-name&gt;&#10;&lt;/property&gt;"
+    description="Sulu list entity"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Entity" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-admin-form"
+    value="&lt;property name=&quot;$propertie$&quot; type=&quot;text_line&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;sulu_admin.$propertie$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
+    description="Property admin form"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable
+      name="propertie"
+      expression=""
+      defaultValue=""
+      alwaysStopAt="true"
+    />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-property-editor-description"
+    value="&lt;property name=&quot;$key$description&quot; type=&quot;text_editor&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Description&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;table&quot; value=&quot;false&quot;/&gt;&#10;        &lt;param name=&quot;link&quot; value=&quot;true&quot;/&gt;&#10;        &lt;!-- CKEditor Parameters examples: --&gt;&#10;        &lt;param name=&quot;extra_allowed_content&quot;&#10;               value=&quot;img(*)[*]; span(*)[*]; div(*)[*]; iframe(*)[*]; script(*)[*]&quot;/&gt;&#10;        &lt;param name=&quot;ui_color&quot; value=&quot;#ffcc00&quot;/&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
+    description="Sulu text editor with Description key"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-block-xml-file"
+    value="&lt;properties xmlns=&quot;http://schemas.sulu.io/template/template&quot;&#10;            xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#10;            xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&#10;            xsi:schemaLocation=&quot;http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd&quot;&gt;&#10;    &lt;block name=&quot;blocks&quot; default-type=&quot;$key$&quot;&gt;&#10;        &lt;!-- @see https://docs.sulu.io/en/2.1/reference/content-types/block.html --&gt;&#10;        &lt;types&gt;&#10;            &lt;type name=&quot;$key$&quot;&gt;&#10;                &lt;meta&gt;&#10;                    &lt;title&gt;$title$&lt;/title&gt;&#10;                &lt;/meta&gt;&#10;                &lt;properties&gt;&#10;                    $end$                    &#10;                &lt;/properties&gt;&#10;            &lt;/type&gt;&#10;        &lt;/types&gt;&#10;    &lt;/block&gt;&#10;&lt;/properties&gt;"
+    description="Sulu block config for XML include"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config blocks.xml"
+    value="&lt;properties xmlns=&quot;http://schemas.sulu.io/template/template&quot;&#10;            xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#10;                        xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&#10;            xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&#10;            xsi:schemaLocation=&quot;http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd&quot;&gt;&#10;    &lt;block name=&quot;blocks&quot; default-type=&quot;$var$&quot; minOccurs=&quot;0&quot;&gt;&#10;        &lt;!-- @see https://docs.sulu.io/en/2.1/reference/content-types/block.html --&gt;&#10;&#10;        &lt;meta&gt;&#10;            &lt;title lang=&quot;en&quot;&gt;Content&lt;/title&gt;&#10;            &lt;title lang=&quot;de&quot;&gt;Inhalte&lt;/title&gt;&#10;        &lt;/meta&gt;&#10;&#10;        &lt;types&gt;&#10;            &lt;xi:include href=&quot;blocks/$var$.xml&quot; xpointer=&quot;xmlns(sulu=http://schemas.sulu.io/template/template)xpointer(/sulu:properties/sulu:block/sulu:types/sulu:type)&quot;/&gt;&#10;        &lt;/types&gt;&#10;    &lt;/block&gt;&#10;&lt;/properties&gt;"
+    description="Blocks loader"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-include"
+    value="&lt;xi:include href=&quot;blocks/$team$&quot;&#10;                        xpointer=&quot;xmlns(sulu=http://schemas.sulu.io/template/template)xpointer(/sulu:properties/sulu:block/sulu:types/sulu:type)&quot;/&gt;"
+    description="XML Include in blocks loader"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="team" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-date"
+    value="&lt;property name=&quot;date&quot; type=&quot;date&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title&gt;Datum&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
+    description="Sulu date picker"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-smart-content"
+    value="&lt;property name=&quot;$key$&quot; type=&quot;smart_content&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title lang=&quot;en&quot;&gt;$title$&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;    &lt;params&gt;&#10;        &lt;param name=&quot;provider&quot; value=&quot;pages&quot;/&gt;&#10;        &lt;param name=&quot;max_per_page&quot; value=&quot;100&quot;/&gt;&#10;        &lt;param name=&quot;page_parameter&quot; value=&quot;p&quot;/&gt;&#10;        &lt;param name=&quot;properties&quot; type=&quot;collection&quot;&gt;&#10;            &lt;param name=&quot;url&quot; value=&quot;url&quot;/&gt;&#10;            &lt;param name=&quot;excerptTitle&quot; value=&quot;excerpt.title&quot;/&gt;&#10;            &lt;param name=&quot;excerptImages&quot; value=&quot;excerpt.images&quot;/&gt;&#10;            &lt;param name=&quot;excerptCategories&quot; value=&quot;excerpt.categories&quot;/&gt;&#10;        &lt;/param&gt;&#10;    &lt;/params&gt;&#10;&lt;/property&gt;"
+    description="Smart content XML configuration"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-contacts"
+    value="&lt;property name=&quot;contacts&quot; type=&quot;contact_selection&quot;&gt;&#10;    &lt;meta&gt;&#10;        &lt;title lang=&quot;en&quot;&gt;Contacts&lt;/title&gt;&#10;    &lt;/meta&gt;&#10;&lt;/property&gt;"
+    description="Contact selection"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template
+    name="config-search"
+    value="&lt;tag name=&quot;sulu.search.field&quot; /&gt;"
+    description="Tag sulu search dield"
+    toReformat="true"
+    toShortenFQNames="true"
+  >
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+</templateSet>
