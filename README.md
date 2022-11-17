@@ -8,7 +8,7 @@ This repository has all PHPStorm live templates from Roland Golla. You know this
 
 1. Go to _Preferences | Tools | Settings Repository_
 
-2. Add Read-only Source https://github.com/shyim/shopware6-live-templates
+2. Add Read-only Source https://github.com/nevercodealone/sulu-cms-live-templates
 
 3. Restart PhpStorm.
 
